@@ -10,7 +10,9 @@ const ButtonCustom = (props) => {
 };
 
 ButtonCustom.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.string,
 };
-
+ButtonCustom.defaultProps = {
+  children: '-',
+};
 export default (ButtonCustom);

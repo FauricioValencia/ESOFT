@@ -42,9 +42,14 @@ const CardPet = (props) => {
 };
 
 CardPet.propTypes = {
-  classes: PropTypes.object.isRequired,
-  data: PropTypes.string.isRequired,
-  onHandle: PropTypes.func.isRequired,
+  classes: PropTypes.object,
+  data: PropTypes.string,
+  onHandle: PropTypes.func,
 };
+CardPet.defaultProps = {
+  data: '-',
+  onHandle: 'button',
+};
+
 
 export default withStyles(styles)(CardPet);
