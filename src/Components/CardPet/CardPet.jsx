@@ -12,7 +12,8 @@ const styles = {
     maxWidth: 345,
   },
   media: {
-    height: 240,
+    height: 300,
+    width: 345,
   },
 };
 

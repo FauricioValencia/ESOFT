@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import Grid from '@material-ui/core/Grid';
 //  REDUX
 import { connect } from 'react-redux';
 import { getApiPetsAsync, getDataApiPets, postPetSelect } from '../../store/actions/pets';
 //  CUSTOM COMPONENTS
 import CardPet from '../../Components/CardPet/CardPet';
-import ButtonCustom from '../../Components/Button/Button';
-
+// import ButtonCustom from '../../Components/Button/Button';
+import Spinner from '../../Components/Spinner/Spinner'
+//  lasy  loading
+const ButtonCustom = lazy(()=>import('../../Components/Button/Button'));
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -14,18 +16,18 @@ class Home extends Component {
       data: [],
     };
   }
-  componentDidMount=()=>{
+  componentDidMount(){
     this.getData();
   }
-  getData =async() =>{
+  getData = async() =>{
     const  { getApiPetsAsync, getDataApiPets } = this.props;
     const data =await getApiPetsAsync();
     getDataApiPets(data.message);
 
   }
+  //  la variable item es un string, y que hace la funcion....
   selectPet=(item)=>{
     const { postPetSelect } = this.props;
-    console.log('pet select: ', item);
     postPetSelect(item);
   }
 
@@ -33,18 +35,21 @@ class Home extends Component {
     const  { petsRandom, classes } = this.props;
 
     return (
-        <Grid container >
-          <Grid item sm={6} xs={12}>
-          <h1> Pets Factory</h1>
+    
+      <Grid container >
+        <Grid item sm={6} xs={12}>
+          <h1>Pets Factory</h1>
           <h3>Lugar donde se encontrara una gran varidad de perros</h3>
-          <ButtonCustom>Ver mas</ButtonCustom>
+          <Suspense fallback={<Spinner/>}>
+          <ButtonCustom>Ver más</ButtonCustom>
+          </Suspense>
         </Grid>
         <Grid item sm={6} direction="row" xs={12}>
           <Grid container spacing={16}>
           {Array.isArray(petsRandom)
                 && petsRandom.length >0
-                &&
-                petsRandom.map(item=>{
+                  ?
+            petsRandom.map(item=>{
               return(
                 <Grid item sm={6} xs={12} spacing={Number(10)}>
                   <CardPet
@@ -54,16 +59,17 @@ class Home extends Component {
                 </Grid>
                 );
               })
+              :
+              <Spinner />
           }
           </Grid>
         </Grid>
-        </Grid>
+      </Grid>
     );
   }
 }
 
 const mapStateToProps = (state, props) => {
-  console.log('datos que trae desde el redux', state);
   return {
     petsRandom: state.listRandomPets.randomPets
   };

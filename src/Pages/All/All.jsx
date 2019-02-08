@@ -11,8 +11,7 @@ import { connect } from 'react-redux';
 import { getApiAllPetsAsync, postApiAllDataPets, postPetSelect } from '../../store/actions/pets';
 //  CUSTOM COMPONENTS
 import CardPet from '../../Components/CardPet/CardPet';
-// import styles from './styles.scss';
-// const cx = classNames.bind(styles);
+import Spinner from '../../Components/Spinner/Spinner';
 
 
 class All extends Component {
@@ -22,10 +21,10 @@ class All extends Component {
       data: [],
     };
   }
-  componentDidMount=()=>{
+  componentDidMount(){
     this.getData();
   }
-  getData =async() =>{
+  getData = async() =>{
     const  { getApiAllPetsAsync, postApiAllDataPets } = this.props;
     const data =await getApiAllPetsAsync();
     postApiAllDataPets(data.message);
@@ -44,7 +43,7 @@ class All extends Component {
         <Grid container direction="row" spacing={16}>
           {Array.isArray(allPets)
                 && allPets.length >0
-                &&
+                ?
                 allPets.map(item=>{
               return(
                 <Grid item sm={3} xs={12} spacing={Number(10)}>
@@ -55,6 +54,8 @@ class All extends Component {
                 </Grid>
                 );
               })
+              :
+              <Spinner />
           }
         </Grid>
     );
@@ -62,7 +63,6 @@ class All extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-  console.log('datos que trae desde el redux', state);
   return {
     allPets: state.listRandomPets.allPetsList
   };
