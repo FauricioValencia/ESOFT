@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 const ButtonCustom = (props) => {
   const { children } = props;
   return (
-    <Button variant="contained" color="primary">{children}</Button>
+    <Button className="button" variant="contained" color="primary">{children}</Button>
   );
 };
 

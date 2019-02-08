@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getApiPetsAsync, getDataApiPets, postPetSelect } from '../../store/actions/pets';
 //  CUSTOM COMPONENTS
 import CardPet from '../../Components/CardPet/CardPet';
-// import ButtonCustom from '../../Components/Button/Button';
 import Spinner from '../../Components/Spinner/Spinner'
 //  lasy  loading
 const ButtonCustom = lazy(()=>import('../../Components/Button/Button'));
