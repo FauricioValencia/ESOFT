@@ -52,8 +52,7 @@ const App = (props) => {
       </div>
       <Grid style={{ margin: '2%' }}>
         <Switch>
-          {/* <Route  path='/Home' exact component={Home} /> */}
-          <Route  path='/' exact component={Home} />
+          <Route  path='/Home' exact component={Home} />
           <Route  path='/Todos' exact component={All} />
           <Route path='/Detail' exact component={Details} />
           <Route component={Home} />
