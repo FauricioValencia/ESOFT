@@ -32,11 +32,6 @@ const CardPet = (props) => {
             title="Contemplative Reptile"
           />
         </CardActionArea>
-        {/* <CardActions>
-          <Button size="small" color="primary">
-            Ver mas
-          </Button>
-        </CardActions> */}
       </Card>
     </Link>
   );

@@ -1,5 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react';
 import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
+
 //  REDUX
 import { connect } from 'react-redux';
 import { getApiPetsAsync, getDataApiPets, postPetSelect } from '../../store/actions/pets';
@@ -34,13 +36,15 @@ class Home extends Component {
     const  { petsRandom, classes } = this.props;
 
     return (
-    
+
       <Grid container >
         <Grid item sm={6} xs={12}>
           <h1>Pets Factory</h1>
           <h3>Lugar donde se encontrara una gran varidad de perros</h3>
           <Suspense fallback={<Spinner/>}>
+          <Link to="/Todos">
           <ButtonCustom>Ver más</ButtonCustom>
+          </Link>
           </Suspense>
         </Grid>
         <Grid item sm={6} direction="row" xs={12}>
