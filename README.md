@@ -7,6 +7,7 @@ Puede ver el sitio [oprimiendo click aqui](http://165.227.204.33:3000/).
 ## Indice
 
 - [Especificaciones del desarrollo](#especificaciones-del-desarrollo)
+- [Pruebas unitarias](#pruebas-unitarias)
 - [Instalación y despliegue](#instalacion-y-despliegue)
 
 
