@@ -1,68 +1,34 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripts Este proyecto se realizo con [Create React App](https://github.com/facebookincubator/create-react-app).
 
-In the project directory, you can run:
+Puede ver el sitio [oprimiendo click aqui](http://165.227.204.33:3000/).
 
-### `npm start`
+## Indice
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Especificaciones del desarrollo](#especificaciones-del-desarrollo)
+- [Instalación y despliegue](#instalacion-y-despliegue)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Especificaciones del desarrollo
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El desarrollo esta enfocado a una prueba de selección para desarrollador front-end contiene las siguientes caracteristicas:
 
-### `npm run build`
+* `Home` La aplicación trae al azar 2 imagenes de perros desde una API y el cual al presionar en alguna de las 2 imagenes lo lleva hasta el detalle de ese perro
+* `Todos` Al cargar la pagina /Todos, primero realiza la peticion donde se ejcuenta un spinner mientras llega la data, donde despues se mostrara todas las imagenes traida desde la API.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* `Enrutamiento` El enrutamiento es simple, tiene las rutas `/Home`, `/Todos`, `/Detail` y al ingresar alguna ruta erronea sera redirigido al `/Home`.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Pruebas unitarias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Las pruebas unitarias se encuentran en la ruta: `/__test__/components/`
+* Se realizo pruebas unitarias de la petcion de la API y al boton.
+* Ejecute las pruebas unitarias con el siguiente comando: `jest`
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## instalacion y despliegue
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Clone el proyecto con git ejecutando el siguiente comando  `git clone https://github.com/FauricioValencia/ESOFT.git`.
+* Instale las dependencias con siguiente comando `yarn`.
+* Corra el proyecto con el siguiente comando `yarn start`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
