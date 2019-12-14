@@ -30,6 +30,6 @@ El desarrollo esta enfocado a una prueba de selección para desarrollador front-
 ## instalacion y despliegue
 
 * Clone el proyecto con git ejecutando el siguiente comando  `git clone https://github.com/FauricioValencia/ESOFT.git`.
-* Instale las dependencias con siguiente comando `yarn`.
+* Instale las dependencias con siguiente comando `yarn install`.
 * Corra el proyecto con el siguiente comando `yarn start`.
 
